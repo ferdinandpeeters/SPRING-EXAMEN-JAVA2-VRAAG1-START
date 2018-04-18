@@ -42,12 +42,12 @@ public class EventHandler {
             System.out.println(question.toString() + " saved in repository");
     	}
     	else {
-    		System.out.println("Already in database");
     		question = lookUp;
+    		System.out.println(question.toString() + "Already in database");
     	}
 
-    	
-        System.out.println("Find all : ") ;
-        repository.findAll().forEach(System.out::println);
+    	ui.setAnswer(question.getAnswer());
+        //System.out.println("Find all : ") ;
+        //repository.findAll().forEach(System.out::println);
     }
 }
