@@ -1,8 +1,17 @@
 package edu.ap.spring.model;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Random;
+import java.util.stream.IntStream;
+
 @Component
 public class EightBall {
+	
+	private Random randomGenerator;
+	
+	ArrayList<Integer> noDoubles = new ArrayList<>();
 	
 	private String[] answers = {"It is certain", 
 								"Yes definitely", 
@@ -15,8 +24,22 @@ public class EightBall {
 	
 	public String getRandomAnswer(String question) {
 		String answer = "";
-
-		return answer;
+		int index = 0;
+		while (answer == "") {
+			if (noDoubles.size() < answers.length) {
+				index = randomGenerator.nextInt(answers.length);
+				if (!noDoubles.contains(index)) {
+					noDoubles.add(index);
+					answer = answers[index];
+				}
+			}
+			else {
+				index = randomGenerator.nextInt(answers.length);
+				answer = answers[index];
+			}
+			
+		}
+        return answer;
 	}
 
 	public String[] getAnswers() {
