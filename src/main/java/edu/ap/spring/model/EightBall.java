@@ -2,14 +2,12 @@ package edu.ap.spring.model;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Random;
-import java.util.stream.IntStream;
 
 @Component
 public class EightBall {
 	
-	private Random randomGenerator;
+	private Random randomGenerator = new Random();
 	
 	ArrayList<Integer> noDoubles = new ArrayList<>();
 	

@@ -10,20 +10,36 @@ public class Question {
 	   @GeneratedValue
 	   private Long id;
 
-	    private String q, a;
+	    private String question, answer;
 
-	    public Question() {}
+	    public String getQuestion() {
+			return question;
+		}
 
-	    public Question(String q, String a) {
-	        this.q = q;
-	        this.a = a;
+		public void setQuestion(String question) {
+			this.question = question;
+		}
+
+		public String getAnswer() {
+			return answer;
+		}
+
+		public void setAnswer(String answer) {
+			this.answer = answer;
+		}
+
+		public Question() {}
+
+	    public Question(String question, String answer) {
+	        this.question = question;
+	        this.answer = answer;
 	    }
 	    
 	    @Override
 	    public String toString() {
 	        return "User {" +
-	                "question = " + q +
-	                ", answer = '" + a + '\'' +
+	                "question = " + question +
+	                ", answer = '" + answer + '\'' +
 	                '}';
 	    }
 }
